@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparkquest OS</title>
+
+  <link rel="icon" href="srcs/icons/lain.png" />
+  <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <canvas id="canvas" style="display:none;"></canvas>
+
+ 
+<div id="loginScreen">
+  <div class="login-box">
+    <h2>Welcome</h2>
+    <p>User: <b>sparkquest</b></p>
+    <input
+      type="password"
+      id="loginInput"
+      placeholder="Enter password"
+      autofocus
+    />
+    <button id="loginBtn">Log In</button>
+  </div>
+</div>
+
+<div class="desktop">
+
+  <div class="desktop-icon" data-window="cmdWindow">
+    <img src="icons/pr.png">
+    <span>Command Prompt</span>
+  </div>
+
+  <div class="desktop-icon" data-window="memoriesWindow">
+    <img src="icons/videos.png">
+    <span>Memories</span>
+  </div>
+
+ <div class="desktop-icon" data-window="musicWindow"> <img src="icons/music.png"> <span>Music</span> </div>
+
+
+  <div class="desktop-icon" data-window="gameWindow">
+    <img src="icons/ga.png">
+    <span>Game</span>
+  </div>
+
+  <div class="desktop-icon" data-window="emailWindow">
+    <img src="icons/email.png">
+    <span>Email</span>
+  </div>
+
+  <div class="desktop-icon" data-window="explorerWindow">
+    <img src="icons/exp.png">
+    <span>Explorer</span>
+  </div>
+
+</div>
+
+
+<div class="window" id="cmdWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">Command Prompt</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="window-body cmd">
+    <div id="cmd-output">
+Microsoft Windows XP [Version 5.1.2600]
+C:\Users\Sparkquest>
+    </div>
+    <input id="cmd-input" autocomplete="off" />
+    <div class="cmd-footer">code by Amarande Alexia-Anastasia</div>
+  </div>
+</div>
+
+
+<div class="window" id="memoriesWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">Memories</div>
+    <div class="title-bar-controls"><button aria-label="Close"></button></div>
+  </div>
+  <div class="window-body gallery">
+    <div class="memory-item">
+      <img src="memories/1.jpeg" alt="1.jpeg">
+      <div class="caption">1.jpeg</div>
+    </div>
+    <div class="memory-item">
+      <img src="memories/2.jpeg" alt="2.jpeg">
+      <div class="caption">2.jpeg</div>
+    </div>
+    <div class="memory-item">
+      <img src="memories/3.jpeg" alt="3.jpeg">
+      <div class="caption">3.jpeg</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="window" id="musicWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">Music Player</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+
+ <div class="window-body music-app">
+  <audio id="player"></audio>
+
+  <div class="music-controls">
+    <button id="playBtn">▶ Play</button>
+    <button id="pauseBtn">⏸ Pause</button>
+    <button id="stopBtn">⏹ Stop</button>
+  </div>
+
+  <ul class="playlist">
+    <li data-src="music/onespark.mp3">ONE SPARK.mp3</li>
+    <li data-src="music/glb.mp3">GOOD LUCK, BABE!.mp3</li>
+    <li data-src="music/spag.mp3">SPAGHETTI.mp3</li>
+    <li data-src="music/typagirl.mp3">TYPA GIRL.mp3</li>
+    <li data-src="music/whiplash.mp3">WHIPLASH (INSTRUMENTAL).mp3</li>
+  </ul>
+</div>
+
+</div>
+
+
+<div class="window" id="gameWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">Game</div>
+    <div class="title-bar-controls"><button aria-label="Close"></button></div>
+  </div>
+  <div class="window-body">
+    <iframe src="snake/snake.html"></iframe>
+  </div>
+</div>
+
+
+<div class="window" id="emailWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">Inbox</div>
+    <div class="title-bar-controls"><button aria-label="Close"></button></div>
+  </div>
+  <div class="window-body">
+    <div class="email" 
+         data-subject="Update!" 
+         data-from="Sparkquest Team &lt;no-reply@sparkquest.com&gt;" 
+         data-date="Jan 12, 2006" 
+         data-body="Site-ul nou Sparkquest este aici! Bucurați-vă de interactivitate și explorați pozele din blog.<br><br><img src='https://i.pinimg.com/originals/38/41/42/384142cc66db1a75bf6f64c063f92842.gif' width='200'>">
+      <b>Update!</b> (click for more)
+    </div>
+  </div>
+</div>
+
+
+<div class="window" id="emailViewer">
+  <div class="title-bar">
+    <div class="title-bar-text" id="emailTitle">Email</div>
+    <div class="title-bar-controls"><button aria-label="Close"></button></div>
+  </div>
+  <div class="window-body" id="emailBody">
+   
+  </div>
+</div>
+
+
+<div class="window" id="imageViewer">
+  <div class="title-bar">
+    <div class="title-bar-text" id="imageViewerTitle">Image</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body image-viewer-body">
+    <img id="imageViewerImg" src="">
+  </div>
+</div>
+
+
+<div class="window" id="explorerWindow">
+  <div class="title-bar">
+    <div class="title-bar-text">sparkquest.blog — Explorer</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="window-body blog">
+
+   
+    <div class="blog-header">
+      <img src="spq.jpeg" class="blog-pfp">
+      <div>
+        <div class="blog-username">sparkquest</div>
+        <div class="blog-subtitle">Step into tomorrow</div>
+      </div>
+    </div>
+
+   
+    <div class="blog-feed">
+
+      <div class="post">
+        <h4>ADUNAREA GENERALA 12.01.2025</h4>
+        <div class="post-images">
+    <img src="/blog/1.jpeg" alt="Adunare">
+  </div>
+        <span class="post-date">Jan 12, 2006</span>
+      </div>
+
+     <div class="post">
+  <h4>SPARKS! Step Into Tomorrow</h4>
+  <p>
+    Pe 7 DECEMBRIE, la Zbor Hub Vaslui, tinerii din oraș au avut șansa de a trăi o zi intensă de învățare, inspirație și experiențe reale. Evenimentul a adus 4 workshopuri dinamice de Wellbeing & Mental Health, Justiție, Leadership și Istorie Modernă, susținute de specialiști care îți vor schimba perspectiva și îți vor aprinde motivația.
+    <br>
+    Activități practice, discuții autentice și momente care te ajută să-ți clarifici direcția!
+  </p>
+
+ 
+  <div class="post-images">
+    <img src="/blog/2.jpeg" alt="Workshop 2">
+    <img src="/blog/3.jpeg" alt="Workshop 3">
+    <img src="/blog/4.jpeg" alt="Workshop 4">
+  </div>
+
+  <span class="post-date">Jan 14, 2006</span>
+</div>
+
+
+      <div class="post">
+        <h4>Bine ai venit pe blogul SparkQuest!</h4>
+        <p>
+          Coming soon...
+        </p>
+        <span class="post-date">02:41 AM</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="window-bar">
+  <button>Start</button>
+  <span id="clock"></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #a30100;
+  background-image: url("spq.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+
+.window {
+  position: fixed;
+  width: min(70vw, 700px);
+  height: min(70vh, 500px);
+  min-width: 300px;
+  min-height: 200px;
+  display: none;
+  box-sizing: border-box;
+}
+
+.window-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  background: #c0c0c0;
+  box-shadow: 0 -2px 2px rgba(0,0,0,0.2);
+}
+
+
+.window-body {
+  height: calc(100% - 30px); 
+  box-sizing: border-box;
+  overflow: auto; 
+  padding: 5px;
+}
+
+.window iframe {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.window audio {
+  width: 100%;
+  height: auto;    
+  margin-top: 10px;
+}
+
+
+#start_button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+
+.desktop {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  gap: 16px;
+}
+
+.desktop-icon {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  font-size: 12px;
+}
+
+.desktop-icon img {
+  width: 70px;
+  height: 70px;
+  image-rendering: pixelated;
+}
+
+.desktop-icon span {
+  display: block;
+  margin-top: 4px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.desktop-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.desktop-icon:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+
+.cmd {
+  background: black;
+  color: #c0ffc0;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 0;
+  min-height: 0;   
+  overflow: hidden;
+}
+
+#cmd-output {
+  flex: 1;
+  min-height: 0;   
+  overflow-y: auto;
+}
+
+
+#cmd-input {
+  background: black;
+  color: #c0ffc0;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.cmd-footer {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  padding: 4px;
+}
+
+
+#cmdWindow .window-body {
+  background: black;
+  color: #c0ffc0;
+}
+
+.email {
+  border-bottom: 1px solid #0f0;
+  padding: 5px;
+}
+
+
+.blog {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-height: 0;   
+  overflow: hidden;
+}
+
+.blog-feed {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+
+
+.blog-header {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 2px solid #9A0002;
+  background: #EFE6DE;
+}
+
+.blog-pfp {
+  width: 48px;
+  height: 48px;
+  border: 1px solid black;
+}
+
+.blog-username {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.blog-subtitle {
+  font-size: 11px;
+  color: #555;
+}
+
+
+
+.post {
+  border: 1px solid #EFE6DE;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #9A0002;
+}
+
+.post h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #EFE6DE;
+}
+
+.post p {
+  margin: 0;
+  font-size: 12px;
+  color: #EFE6DE;
+}
+
+.post-date {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  color: #c0c0c0;
+  text-align: right;
+}
+
+.gallery, .post-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.gallery img {
+  width: 150px;
+  margin: 5px;
+  padding: 1px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.post-images img {
+  width: calc(33% - 5px);
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.memory-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.memory-item img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.memory-item .caption {
+  margin-top: 4px;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+}
+
+
+#emailViewer .email-header {
+  font-size: 12px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+#emailViewer .email-header div {
+  margin-bottom: 2px;
+}
+
+#emailViewer .email-content {
+  font-size: 14px;
+  color: #000;
+  overflow-y: auto;
+}
+
+#emailViewer .email-content img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  border: 1px solid #ccc;
+}
+.image-viewer-body {
+  background: #EFE6DE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+#imageViewerImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.music-app {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #999;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+.playlist li {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.playlist li:hover {
+  background: #000080;
+  color: white;
+}
+.music-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.music-controls button {
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+#gameWindow .window-body {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+#gameWindow iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#gameWindow {
+  width: min(85vw, 900px);
+  height: min(80vh, 620px);
+  min-width: 460px;
+  min-height: 360px;
+}
+
+#loginScreen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(#3e0001, #9A0002);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: Tahoma, sans-serif;
+}
+
+.login-box {
+  background: #ece9d8;
+  border: 2px solid #000080;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+}
+
+.login-box h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.login-box p {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.login-box button {
+  font-size: 12px;
+  padding: 4px 10px;
+}
