@@ -16,7 +16,7 @@ function openWindow(id) {
 
 
 document.querySelectorAll(".desktop-icon").forEach(icon => {
-  icon.ondblclick = () => openWindow(icon.dataset.window);
+  icon.onclick = () => openWindow(icon.dataset.window);
 });
 
 
@@ -244,5 +244,6 @@ function enterOS() {
 
 
 loginBtn.addEventListener("click", enterOS);
+
 
 
